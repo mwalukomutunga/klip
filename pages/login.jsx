@@ -26,11 +26,10 @@ export default function Login() {
     
       const handleLogin = (e) => {
         e.preventDefault();
-        alert('Test')
         requests.post("token", input).then((res) => {
           if (res) {
             dispatch(addUser(res));
-            router.push("/");
+            router.push("/bio");
           } else {
             router.push("/login");
           }

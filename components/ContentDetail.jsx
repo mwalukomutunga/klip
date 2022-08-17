@@ -356,7 +356,7 @@ const ContentDetail = ({ phone }) => {
           <div className="row">
             <div className="col-md-6">
               <script>document.write(new Date().getFullYear())</script> &copy;
-              Minton theme by{" "}
+              Zep-Re
               <a href="ecommerce-orders-detail.html">Coderthemes</a>
             </div>
             <div className="col-md-6">

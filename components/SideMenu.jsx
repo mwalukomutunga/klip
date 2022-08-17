@@ -4,26 +4,26 @@ const SideMenu = () => {
   return (
     <div className="left-side-menu">
       <div className="logo-box">
-       <Link  href="/">
+       {/* <Link  href="/">
        <a className="logo logo-dark text-center">
           <span className="logo-sm">
-            <image src="https://acreafrica.com/wp-content/uploads/2020/07/Logo-2.png" alt="" height="24" />
-            <span className="logo-lg-text-light">KLIP</span>
+            <image src="https://www.zep-re.com/images/headers/logo-new.png" alt="" height="42" />
+            <span className="logo-lg-text-light" style={{color:'red'}}>KLIP</span>
           </span>
           <span className="logo-lg">
-            <image src="https://acreafrica.com/wp-content/uploads/2020/07/Logo-2.png" alt="" height="20" />
-            <span className="logo-lg-text-light">A</span>
+            <image src="https://www.zep-re.com/images/headers/logo-new.png" alt="" height="42" />
+            <span className="logo-lg-text-light"  style={{color:'red'}}>KLIP</span>
           </span>
         </a>
-       </Link>
+       </Link> */}
 
         <Link href="/">
         <a  className="logo logo-light text-center">
           <span className="logo-sm">
-          {/* <a    className="text-reset h2 mt-2 mb-1 d-block logo-lg-text-light">Acre Africa</a> */}
+          <a    className="text-reset h2 mt-2 mb-1 d-block logo-lg-text-light">KLIP</a>
           </span>
           <span className="logo-lg">
-            <a    className="text-reset h2 mt-2 mb-1 d-block logo-lg-text-light">KLIP</a>
+            <a    className=" h2 mt-2 mb-1 d-block logo-lg-text-light">KLIP</a>
             {/* <img src="https://acreafrica.com/wp-content/uploads/2020/07/Logo-2.png" alt="" height="50" /> */}
           </span>
         </a>
