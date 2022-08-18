@@ -1,7 +1,4 @@
-import Head from "next/head";
-import ContentPage from "./ContentPage";
 import NavBar from "./NavBar";
-import RightBar from "./RightBar";
 import SideMenu from "./SideMenu";
 import Wrapper from "./Wrapper";
 
