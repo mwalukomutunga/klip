@@ -15,13 +15,13 @@ const Home = () => {
       router.push("/login");
     }
   }, [user, router]);
-
-  // useEffect(() => {
-  //   requests.get("Auth/" + user?.user?.email).then((res) => {
-  //     useInputs(res);
-  //   });
-  // }, [user?.user?.email]);
-
+  
+  useEffect(() => {
+    requests.get("Auth/" + user?.user?.email).then((res) => {
+      useInputs(res);
+    });
+  }, [user?.user?.email]);
+  
   return <ContentDetail data={data} />;
 };
 
