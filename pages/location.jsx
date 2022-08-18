@@ -20,7 +20,7 @@ const Location = () => {
     requests.get("Regions/regions").then((res) => {
         setRegions(res);
       });
-  }, []);
+  }, [user?.user?.email]);
 const handleRegionChange =(e,action)=>{
     e.persist();
     const target = e.target;
@@ -70,7 +70,7 @@ const handleWardChange =(e)=>{
       <form className="form-horizontal"  onSubmit={(e)=>handleUpdate(e)} role="form">
        
         <div className="mb-2 row">
-          <label className="col-md-2 col-form-label" for="example-placeholder">
+          <label className="col-md-2 col-form-label">
           Region
           </label>
           <div className="col-md-10">
@@ -87,7 +87,7 @@ const handleWardChange =(e)=>{
           </div>
         </div>
         <div className="mb-2 row">
-          <label className="col-md-2 col-form-label" for="example-placeholder">
+          <label className="col-md-2 col-form-label" >
           County
           </label>
           <div className="col-md-10">
@@ -103,7 +103,7 @@ const handleWardChange =(e)=>{
           </div>
         </div>
         <div className="mb-2 row">
-          <label className="col-md-2 col-form-label" for="example-placeholder">
+          <label className="col-md-2 col-form-label">
           Sub County
           </label>
           <div className="col-md-10">
@@ -119,7 +119,7 @@ const handleWardChange =(e)=>{
           </div>
         </div>
         <div className="mb-2 row">
-          <label className="col-md-2 col-form-label" for="example-placeholder">
+          <label className="col-md-2 col-form-label" >
           Ward
           </label>
           <div className="col-md-10">

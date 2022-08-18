@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 
 const AuthLayout = ({ children }) => {
   return (
@@ -21,17 +23,21 @@ const AuthLayout = ({ children }) => {
             <div className="card-body">
               <div className="auth-brand text-center text-lg-start">
                 <div className="auth-logo">
-                  <a href="index.html" className="logo logo-dark text-center">
+                  <Link href="/">
+                  <a  className="logo logo-dark text-center">
                     <span className="logo-lg">
-                      <img src="/assets/images/logo.png" alt="" height="42" />
+                      <Image src="/assets/images/logo.png" alt="" height="42" width='32' />
                     </span>
                   </a>
+                  </Link>
 
-                  <a href="index.html" className="logo logo-light text-center">
+                 <Link href="/">
+                 <a  className="logo logo-light text-center">
                     <span className="logo-lg">
-                      <img src="/assets/images/logo.png" alt="" height="42" />
+                      <Image src="/assets/images/logo.png" alt="" height="42" width='32' />
                     </span>
                   </a>
+                 </Link>
                 </div>
               </div>
               {children}             

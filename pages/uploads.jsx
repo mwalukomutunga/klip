@@ -33,7 +33,7 @@ const  FileUploads =(props)=> {
     requests.post("/uploads/"+user?.user?.email, formData).then((res) => {
       router.push('/bio')
     });
-  };
+  }; 
   const acceptedFileItems = acceptedFiles.map(file => (
     <li key={file.path}>
       {file.path} - {file.size} bytes
@@ -58,7 +58,7 @@ const  FileUploads =(props)=> {
     <section>
       <div {...getRootProps({ className: 'dropzone' })}>
         <input {...getInputProps()} />
-        <p>Drag 'n' drop farm images here, or click to select files</p>
+        <p>Drag and drop farm images here, or click to select files</p>
         <em>(10 files are the maximum number of files you can drop here)</em>
       </div>
       <aside>

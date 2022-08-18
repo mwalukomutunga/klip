@@ -10,7 +10,7 @@ const InPut = ({ Label, name,defaultValue,setInputs }) => {
       };
     return (
       <div className="mb-2">
-        <label for="password" className="form-label">
+        <label className="form-label">
           {Label}
         </label>
         <div className="input-group input-group-merge">

@@ -13,7 +13,7 @@ const Bank = () => {
     requests.get("Auth/" + user?.user?.email).then((res) => {
       setInputs(res);
     });
-  }, []);
+  }, [user?.user?.email]);
 
   const handleInputChange = (event) => {
     event.persist();
@@ -32,7 +32,7 @@ const Bank = () => {
     <FormLayout Page="Bank Information">
       <form className="form-horizontal"  onSubmit={(e)=>handleUpdate(e)} role="form">
         <div className="mb-2 row">
-          <label className="col-md-2 col-form-label" for="example-placeholder">
+          <label className="col-md-2 col-form-label" htmlFor="example-placeholder">
           Bank Name
           </label>
           <div className="col-md-10">
@@ -47,7 +47,7 @@ const Bank = () => {
           </div>
         </div>
         <div className="mb-2 row">
-          <label className="col-md-2 col-form-label" for="example-placeholder">
+          <label className="col-md-2 col-form-label" htmlFor="example-placeholder">
           Bank Branch
           </label>
           <div className="col-md-10">
@@ -62,7 +62,7 @@ const Bank = () => {
           </div>
         </div>
         <div className="mb-2 row">
-          <label className="col-md-2 col-form-label" for="example-placeholder">
+          <label className="col-md-2 col-form-label" htmlFor="example-placeholder">
           Bank Account No
           </label>
           <div className="col-md-10">
@@ -78,7 +78,7 @@ const Bank = () => {
         </div>
       
         <div className="mb-2 row">
-          <label className="col-md-2 col-form-label" for="example-placeholder">
+          <label className="col-md-2 col-form-label" htmlFor="example-placeholder">
           Payment Method
           </label>
           <div className="col-md-10">
@@ -92,14 +92,7 @@ const Bank = () => {
               <option>Visa</option>
               <option>MasterCard</option>
             </select>
-            {/* <input
-              type="text"
-              className="form-control"             
-              placeholder="Gender"
-              name ="gender"
-              defaultValue={input.gender}
-              onChange={handleInputChange}
-            /> */}
+            
           </div>
         </div>
 

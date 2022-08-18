@@ -20,7 +20,7 @@ const NextOfKin = () => {
     requests.get("Regions/regions").then((res) => {
         setRegions(res);
       });
-  }, []);
+  }, [user?.user?.email]);
 const handleRegionChange =(e,action)=>{
     e.persist();
     const target = e.target;
@@ -69,7 +69,7 @@ const handleWardChange =(e)=>{
     <FormLayout Page="Next Of Kin">
       <form className="form-horizontal"  onSubmit={(e)=>handleUpdate(e)} role="form">
       <div className="mb-2 row">
-          <label className="col-md-2 col-form-label" for="example-placeholder">
+          <label className="col-md-2 col-form-label" >
             Full Name
           </label>
           <div className="col-md-10">
@@ -84,7 +84,7 @@ const handleWardChange =(e)=>{
           </div>
         </div>
         <div className="mb-2 row">
-          <label className="col-md-2 col-form-label" for="example-placeholder">
+          <label className="col-md-2 col-form-label">
             ID Number
           </label>
           <div className="col-md-10">
@@ -99,7 +99,7 @@ const handleWardChange =(e)=>{
           </div>
         </div>
         <div className="mb-2 row">
-          <label className="col-md-2 col-form-label" for="example-placeholder">
+          <label className="col-md-2 col-form-label">
           Relationship
           </label>
           <div className="col-md-10">
@@ -114,7 +114,7 @@ const handleWardChange =(e)=>{
           </div>
         </div>
       <div className="mb-2 row">
-          <label className="col-md-2 col-form-label" for="example-placeholder">
+          <label className="col-md-2 col-form-label">
           Bank Name
           </label>
           <div className="col-md-10">
@@ -129,7 +129,7 @@ const handleWardChange =(e)=>{
           </div>
         </div>
         <div className="mb-2 row">
-          <label className="col-md-2 col-form-label" for="example-placeholder">
+          <label className="col-md-2 col-form-label" >
           Bank Branch
           </label>
           <div className="col-md-10">
@@ -144,7 +144,7 @@ const handleWardChange =(e)=>{
           </div>
         </div>
         <div className="mb-2 row">
-          <label className="col-md-2 col-form-label" for="example-placeholder">
+          <label className="col-md-2 col-form-label">
           Bank Account No
           </label>
           <div className="col-md-10">
@@ -160,7 +160,7 @@ const handleWardChange =(e)=>{
         </div>
       
         <div className="mb-2 row">
-          <label className="col-md-2 col-form-label" for="example-placeholder">
+          <label className="col-md-2 col-form-label" >
           Payment Method
           </label>
           <div className="col-md-10">
@@ -178,7 +178,7 @@ const handleWardChange =(e)=>{
           </div>
           </div>
         <div className="mb-2 row">
-          <label className="col-md-2 col-form-label" for="example-placeholder">
+          <label className="col-md-2 col-form-label" >
           Region
           </label>
           <div className="col-md-10">
@@ -195,7 +195,7 @@ const handleWardChange =(e)=>{
           </div>
         </div>
         <div className="mb-2 row">
-          <label className="col-md-2 col-form-label" for="example-placeholder">
+          <label className="col-md-2 col-form-label" >
           County
           </label>
           <div className="col-md-10">
@@ -211,7 +211,7 @@ const handleWardChange =(e)=>{
           </div>
         </div>
         <div className="mb-2 row">
-          <label className="col-md-2 col-form-label" for="example-placeholder">
+          <label className="col-md-2 col-form-label" >
           Sub County
           </label>
           <div className="col-md-10">
@@ -227,7 +227,7 @@ const handleWardChange =(e)=>{
           </div>
         </div>
         <div className="mb-2 row">
-          <label className="col-md-2 col-form-label" for="example-placeholder">
+          <label className="col-md-2 col-form-label">
           Ward
           </label>
           <div className="col-md-10">

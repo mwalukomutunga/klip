@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { useSelector, useDispatch } from "react-redux";
 import { signOut } from "../context/user.slice";
@@ -23,10 +24,12 @@ const NavBar = () => {
               aria-haspopup="false"
               aria-expanded="false"
             >
-              <img
+              <Image
                 src="/assets/images/user.png"
                 alt="user-image"
                 className="rounded-circle"
+                width='42'
+                height ='30'
               />
               <span className="pro-user-name ms-1">
                 {user?.user?.name} <i className="mdi mdi-chevron-down"></i>
@@ -37,25 +40,31 @@ const NavBar = () => {
                 <h6 className="text-overflow m-0">Welcome !</h6>
               </div>
 
-              <a href=";" className="dropdown-item notify-item">
-                <i className="ri-account-circle-line"></i>
-                <span>My Account</span>
-              </a>
+              <Link href="">
+                <a className="dropdown-item notify-item">
+                  <i className="ri-account-circle-line"></i>
+                  <span>My Account</span>
+                </a>
+              </Link>
 
-              <a href=";" className="dropdown-item notify-item">
-                <i className="ri-settings-3-line"></i>
-                <span>Settings</span>
-              </a>
+              <Link href="">
+                <a  className="dropdown-item notify-item">
+                  <i className="ri-settings-3-line"></i>
+                  <span>Settings</span>
+                </a>
+              </Link>
 
               <div className="dropdown-divider"></div>
 
-              <a
+             <Link href="">
+             <a
                 onClick={() => handleSignOut()}
                 className="dropdown-item notify-item"
               >
                 <i className="ri-logout-box-line"></i>
                 <span>Logout</span>
               </a>
+             </Link>
             </div>
           </li>
         </ul>
@@ -105,8 +114,8 @@ const NavBar = () => {
               </Link>
               <Link href="location">
                 <a className="dropdown-item">
-                  <i class="fas fa-globe-africa"></i> 
-                  
+                  <i className="fas fa-globe-africa"></i>
+
                   <span> Update Location</span>
                 </a>
               </Link>

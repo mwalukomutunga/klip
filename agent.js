@@ -2,6 +2,7 @@ import axios from "axios";
 import store from "./context/store";
 // axios.defaults.baseURL = "http://157.230.190.229:80/api/";
 const isProd = process.env.NODE_ENV === "production";
+import {  toast } from "react-toastify";
 
 const notify = (msg) =>
   toast(msg, {
@@ -71,7 +72,7 @@ axios.interceptors.response.use(
     }
   }
 );
-const responseBody = (response) => response.data;
+const responseBody = (response) => response?.data;
 const requests = {
   get: (url) => axios.get(url).then(responseBody),
   post: (url, body = {}) => axios.post(url, body).then(responseBody),

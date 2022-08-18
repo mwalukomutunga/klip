@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps, ...appProps }) {
     if (!isLogged || isLogged == false) {
       router.push("/login");
     }
-  }, [isLogged]);
+  }, [isLogged,router]);
 
   const getLayout = () => {
     if ([`/login`].includes(appProps.router.pathname) || [`/register`].includes(appProps.router.pathname) || [`/authrecovery`].includes(appProps.router.pathname)) {

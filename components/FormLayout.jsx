@@ -1,4 +1,5 @@
-const FormLayout = ({children,Page}) => {
+import Link from "next/link";
+const FormLayout = ({ children, Page }) => {
   return (
     <div className="content-page">
       <div className="content">
@@ -10,10 +11,14 @@ const FormLayout = ({children,Page}) => {
                 <div className="page-title-right">
                   <ol className="breadcrumb m-0">
                     <li className="breadcrumb-item">
-                      <a href="javascript: void(0);">Farmer</a>
+                      <Link href="">
+                        <a>Farmer</a>
+                      </Link>
                     </li>
                     <li className="breadcrumb-item">
-                      <a href="javascript: void(0);">info</a>
+                      <Link href="">
+                        <a>Info</a>
+                      </Link>
                     </li>
                     <li className="breadcrumb-item active">Input</li>
                   </ol>
@@ -33,10 +38,7 @@ const FormLayout = ({children,Page}) => {
 
                   <div className="row">
                     <div className="col-12">
-                      <div className="p-2">
-                      {children}
-                       
-                      </div>
+                      <div className="p-2">{children}</div>
                     </div>
                   </div>
                 </div>
@@ -55,9 +57,15 @@ const FormLayout = ({children,Page}) => {
             </div>
             <div className="col-md-6">
               <div className="text-md-end footer-links d-none d-sm-block">
-                <a href="javascript:void(0);">About Us</a>
-                <a href="javascript:void(0);">Help</a>
-                <a href="javascript:void(0);">Contact Us</a>
+                <Link href="">
+                  <a>About Us</a>
+                </Link>
+                <Link href="">
+                  <a>Help</a>
+                </Link>
+                <Link href="">
+                  <a>Contact Us</a>
+                </Link>
               </div>
             </div>
           </div>

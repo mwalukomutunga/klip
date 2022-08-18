@@ -44,7 +44,7 @@ export default function Reset() {
       <form onSubmit={(e)=>handleLogin(e)}>
        
         <div className="mb-2">          
-          <label for="password" className="form-label">
+          <label htmlFor="password" className="form-label">
             Password
           </label>
           <div className="input-group input-group-merge">
@@ -63,7 +63,7 @@ export default function Reset() {
           </div>
         </div>
         <div className="mb-2">          
-          <label for="password" className="form-label">
+          <label htmlFor="confirmpassword" className="form-label">
            Confirm Password
           </label>
           <div className="input-group input-group-merge">
@@ -90,7 +90,7 @@ export default function Reset() {
 
       <footer className="footer footer-alt">
         <p className="text-muted">
-          Don't have an account?{" "}
+          Do not have an account?
          <Link href="register">
          <a
             

@@ -65,9 +65,9 @@ const ContentPage = ({ children,Title }) => {
             </div>
             <div className="col-md-6">
               <div className="text-md-end footer-links d-none d-sm-block">
-                <a href=";">About Us</a>
-                <a href=";">Help</a>
-                <a href=";">Contact Us</a>
+              <Link href=""><a >About Us</a></Link>
+                <Link href=""><a >Help</a></Link>
+                <Link href=""><a >Contact Us</a></Link>
               </div>
             </div>
           </div>

@@ -28,7 +28,7 @@ export default function Register() {
      <>
       <h4 className="mt-0"></h4>
       <p className="text-muted mb-4">
-        Don't have an account? Create your own account, it takes less than a
+        Do not have an account? Create your own account, it takes less than a
         minute
       </p>
 
@@ -83,7 +83,7 @@ export default function Register() {
         {/* <InPut Label="Id number"  defaultValue={input.idNumber} setInputs ={setInputs} name ="idNumber"/> */}
         {/* <InputPwd Label="Password" name ="password"/> */}
         <div className="mb-2">
-      <label for="password" className="form-label">
+      <label className="form-label">
       Password
       </label>
       <div className="input-group input-group-merge">
@@ -108,11 +108,13 @@ export default function Register() {
               type="checkbox"
               id="checkbox-signup"
             />
-            <label className="form-check-label" for="checkbox-signup">
+            <label className="form-check-label">
               I accept
-              <a href="javascript: void(0);" className="text-dark">
+              <Link  href="" >
+              <a className="text-dark">
                 Terms and Conditions
               </a>
+              </Link>
             </label>
           </div>
         </div>

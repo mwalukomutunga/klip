@@ -1,25 +1,28 @@
-
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import ContentDetail from "../components/ContentDetail";
 import { useRouter } from "next/router";
 import { useSelector } from "react-redux";
-
-const columns = ["County", "Sub-County","ward","Name Of Fsc","FSC Code","Year Of Joining","Gender","Age","Phone Number","Selected for Pilot"];
+import requests from '../agent'
 
 const Home = () => {
+  const [data, useInputs] = useState({});
   const router = useRouter();
   const user = useSelector((state) => state.user);
-  useEffect(()=>{
-      if(user && user.isLogged && user.isLogged ===true){       
-      }else{
-        router.push('/login')
-      }
-    },[user])
 
-  return (  
-   <ContentDetail phone ={user?.user?.email}/>
-  );
+  useEffect(() => {
+    if (user && user.isLogged && user.isLogged === true) {
+    } else {
+      router.push("/login");
+    }
+  }, [user, router]);
+
+  // useEffect(() => {
+  //   requests.get("Auth/" + user?.user?.email).then((res) => {
+  //     useInputs(res);
+  //   });
+  // }, [user?.user?.email]);
+
+  return <ContentDetail data={data} />;
 };
 
 export default Home;
-

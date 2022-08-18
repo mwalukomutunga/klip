@@ -1,12 +1,17 @@
-import { useEffect, useState } from "react";
-import requests from "../agent";
-const ContentDetail = ({ phone }) => {
-  const [data, useData] = useState({});
-  useEffect(() => {
-    requests.get("Auth/" + phone).then((res) => {
-      useData(res);
-    });
-  }, []);
+import Link from "next/link";
+// import React, { useEffect, useState } from "react";
+// import requests from "../agent";
+// import { useSelector } from "react-redux";
+
+const ContentDetail = ({data}) => {
+  // const user = useSelector((state) => state.user);
+  // const [data, useInputs] = useState({});
+
+  // useEffect(() => {
+  //   requests.get("Auth/" + user?.user?.email).then((res) => {
+  //     useInputs(res);
+  //   });
+  // }, [user?.user?.email]);
   return (
     <div className="content-page">
       <div className="content">
@@ -18,10 +23,14 @@ const ContentDetail = ({ phone }) => {
                 <div className="page-title-right">
                   <ol className="breadcrumb m-0">
                     <li className="breadcrumb-item">
-                      <a href="javascript: void(0);">KLIP</a>
+                      <Link href=";">
+                        <a>KLIP</a>
+                      </Link>
                     </li>
                     <li className="breadcrumb-item">
-                      <a href="javascript: void(0);">Farmer</a>
+                      <Link href="">
+                        <a>Farmer</a>
+                      </Link>
                     </li>
                     <li className="breadcrumb-item active">Detail</li>
                   </ol>
@@ -113,7 +122,7 @@ const ContentDetail = ({ phone }) => {
                       <div className="col-lg-3 col-sm-6">
                         <div className="d-flex mb-2">
                           <div className="me-2 align-self-center">
-                          <i className="ri-calendar-event-line h2 m-0 text-muted"></i>
+                            <i className="ri-calendar-event-line h2 m-0 text-muted"></i>
                           </div>
                           <div className="flex-1">
                             <p className="mb-1">Created date</p>
@@ -182,7 +191,7 @@ const ContentDetail = ({ phone }) => {
                       <table className="table table-borderless table-sm mb-0">
                         <tbody>
                           <tr>
-                            <th colspan="2">
+                            <th colSpan="2">
                               <h5 className="font-15 m-0">{data?.fullName}</h5>
                             </th>
                           </tr>
@@ -207,41 +216,13 @@ const ContentDetail = ({ phone }) => {
                     </div>
                   </div>
                 </div>
-                {/* <div className="col-lg-4">
-                  <div>
-                    <h4 className="font-15 mb-2">Location Information</h4>
-
-                    <div className="card p-2 mb-lg-0">
-                      <table className="table table-borderless table-sm mb-0">
-                        <tbody>
-                          <tr>
-                            <th scope="row">Region:</th>
-                            <td>Nairobi</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">County :</th>
-                            <td>Visa ending in 2851</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">Sub county :</th>
-                            <td>02/2021</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">Ward :</th>
-                            <td>Kilomeni</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div> */}
                 <div className="col-lg-4">
                   <div>
                     <div className="table-responsive">
                       <table className="table table-centered border mb-0">
                         <thead className="bg-light">
                           <tr>
-                            <th colspan="2">Farmer location</th>
+                            <th colSpan="2">Farmer location</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -357,13 +338,19 @@ const ContentDetail = ({ phone }) => {
             <div className="col-md-6">
               <script>document.write(new Date().getFullYear())</script> &copy;
               Zep-Re
-              <a href="ecommerce-orders-detail.html">Coderthemes</a>
+              {/* <a href="ecommerce-orders-detail.html">Coderthemes</a> */}
             </div>
             <div className="col-md-6">
               <div className="text-md-end footer-links d-none d-sm-block">
-                <a href="javascript:void(0);">About Us</a>
-                <a href="javascript:void(0);">Help</a>
-                <a href="javascript:void(0);">Contact Us</a>
+                <Link href="">
+                  <a>About Us</a>
+                </Link>
+                <Link href="">
+                  <a>Help</a>
+                </Link>
+                <Link href="">
+                  <a>Contact Us</a>
+                </Link>
               </div>
             </div>
           </div>

@@ -13,7 +13,7 @@ const Bio = () => {
     requests.get("Auth/" + user?.user?.email).then((res) => {
       setInputs(res);
     });
-  }, []);
+  }, [user?.user?.email]);
 
   const handleInputChange = (event) => {
     event.persist();
@@ -32,7 +32,7 @@ const Bio = () => {
     <FormLayout Page="Bio Information">
       <form className="form-horizontal"  onSubmit={(e)=>handleUpdate(e)} role="form">
         <div className="mb-2 row">
-          <label className="col-md-2 col-form-label" for="example-placeholder">
+          <label className="col-md-2 col-form-label">
             Full Name
           </label>
           <div className="col-md-10">
@@ -47,7 +47,7 @@ const Bio = () => {
           </div>
         </div>
         <div className="mb-2 row">
-          <label className="col-md-2 col-form-label" for="example-placeholder">
+          <label className="col-md-2 col-form-label">
             ID Number
           </label>
           <div className="col-md-10">
@@ -62,7 +62,7 @@ const Bio = () => {
           </div>
         </div>
         <div className="mb-2 row">
-          <label className="col-md-2 col-form-label" for="example-placeholder">
+          <label className="col-md-2 col-form-label" >
             Age
           </label>
           <div className="col-md-10">
@@ -77,7 +77,7 @@ const Bio = () => {
           </div>
         </div>
         <div className="mb-2 row">
-          <label className="col-md-2 col-form-label" for="example-placeholder">
+          <label className="col-md-2 col-form-label">
             Household size
           </label>
           <div className="col-md-10">
@@ -92,7 +92,7 @@ const Bio = () => {
           </div>
         </div>
         <div className="mb-2 row">
-          <label className="col-md-2 col-form-label" for="example-placeholder">
+          <label className="col-md-2 col-form-label" >
             Gender
           </label>
           <div className="col-md-10">

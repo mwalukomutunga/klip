@@ -61,7 +61,7 @@ export default function Login() {
 
       <form onSubmit={(e) => handleLogin(e)}>
         <div className="mb-2">
-          <label for="emailaddress" className="form-label">
+          <label  className="form-label">
             Phone number
           </label>
           <input
@@ -81,7 +81,7 @@ export default function Login() {
               <small>Forgot your password?</small>
             </a>
           </Link>
-          <label for="password" className="form-label">
+          <label className="form-label">
             Password
           </label>
           <div className="input-group input-group-merge">
@@ -113,7 +113,7 @@ export default function Login() {
               type="checkbox"
               id="checkbox-signin"
             />
-            <label className="form-check-label" for="checkbox-signin">
+            <label className="form-check-label" >
               Remember me
             </label>
           </div>
@@ -123,12 +123,11 @@ export default function Login() {
             Log In
           </button>
         </div>
-      </form>
-      
+      </form>     
 
       <footer className="footer footer-alt">
         <p className="text-muted">
-          Don't have an account?{" "}
+          Do not have an account?
           <Link href="register">
             <a className="text-primary fw-medium ms-1">Sign Up</a>
           </Link>

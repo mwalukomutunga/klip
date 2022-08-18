@@ -1,7 +1,7 @@
 const InputPwd = ({ Label, name }) => {
   return (
     <div className="mb-2">
-      <label for="password" className="form-label">
+      <label className="form-label">
         {Label}
       </label>
       <div className="input-group input-group-merge">
