@@ -4,37 +4,54 @@ import { useEffect, useState } from "react";
 import requests from "../agent";
 import { useRouter } from "next/router";
 import { addUser } from "../context/user.slice";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const isProd = process.env.NODE_ENV === "production";
 
 export default function Login() {
+  const notify = () =>
+    toast("Invalid credentials. Try again!", {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  const [input, setInputs] = useState({
+    username: isProd ? "" : "254710623337",
+    password: "",
+  });
+  const dispatch = useDispatch();
+  const router = useRouter();
+  useEffect(() => {}, []);
 
-    const [input, setInputs] = useState({
-        username: isProd ? "" : "254710623337",
-        password: "",
-      });
-      const dispatch = useDispatch();
-      const router = useRouter();
-      useEffect(() => {}, []);
-    
-      const handleInputChange = (event) => {
-        event.persist();
-        const target = event.target;
-        const value = target.type === "checkbox" ? target.checked : target.value;
-        const name = target.name;
-        setInputs((inputs) => ({ ...inputs, [name]: value }));
-      };
-    
-      const handleLogin = (e) => {
-        e.preventDefault();
-        requests.post("token", input).then((res) => {
-          if (res) {
-            dispatch(addUser(res));
-            router.push("/bio");
-          } else {
-            router.push("/login");
-          }
-        });
-      };
+  const handleInputChange = (event) => {
+    event.persist();
+    const target = event.target;
+    const value = target.type === "checkbox" ? target.checked : target.value;
+    const name = target.name;
+    setInputs((inputs) => ({ ...inputs, [name]: value }));
+  };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    requests.post("token", input).then((res) => {
+      if (res) {
+        if (!res?.reset) {
+          dispatch(addUser(res));
+          router.push("/bio");
+        } else {
+          dispatch(addUser(res));
+          router.push("/authrecovery");
+        }
+      } else {
+        router.push("/login");
+        notify();
+      }
+    });
+  };
   return (
     <>
       <h4 className="mt-0">Sign In</h4>
@@ -42,7 +59,7 @@ export default function Login() {
         Enter your mobile phone and password to access farmer portal.
       </p>
 
-      <form onSubmit={(e)=>handleLogin(e)}>
+      <form onSubmit={(e) => handleLogin(e)}>
         <div className="mb-2">
           <label for="emailaddress" className="form-label">
             Phone number
@@ -59,10 +76,10 @@ export default function Login() {
           />
         </div>
         <div className="mb-2">
-          <Link  href="authrecovery">
-          <a className="text-muted float-end">
-            <small>Forgot your password?</small>
-          </a>
+          <Link href="authrecovery">
+            <a className="text-muted float-end">
+              <small>Forgot your password?</small>
+            </a>
           </Link>
           <label for="password" className="form-label">
             Password
@@ -74,15 +91,15 @@ export default function Login() {
               className="form-control"
               placeholder="Enter your password"
             /> */}
-             <input
-                      required
-                      defaultValue={input.password}
-                      className="form-control"
-                      type="password"
-                      name="password"
-                      placeholder="Password"
-                      onChange={handleInputChange}
-                    />
+            <input
+              required
+              defaultValue={input.password}
+              className="form-control"
+              type="password"
+              name="password"
+              placeholder="Password"
+              onChange={handleInputChange}
+            />
             <div className="input-group-text" data-password="false">
               <span className="password-eye"></span>
             </div>
@@ -102,22 +119,19 @@ export default function Login() {
           </div>
         </div>
         <div className="d-grid text-center">
-          <button className="btn btn-primary"  type="submit">
+          <button className="btn btn-primary" type="submit">
             Log In
           </button>
         </div>
       </form>
+      
 
       <footer className="footer footer-alt">
         <p className="text-muted">
           Don't have an account?{" "}
-         <Link href="register">
-         <a
-            
-            className="text-primary fw-medium ms-1"
-          >
-            Sign Up
-          </a></Link>
+          <Link href="register">
+            <a className="text-primary fw-medium ms-1">Sign Up</a>
+          </Link>
         </p>
       </footer>
     </>

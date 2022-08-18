@@ -4,6 +4,8 @@ import store from "../context/store";
 import { Provider } from "react-redux";
 import Router,{ useRouter } from "next/router";
 import React,{ useEffect } from "react";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 
 import NProgress from 'nprogress'; //nprogress module
 import 'nprogress/nprogress.css'; //styles of nprogress
@@ -26,10 +28,20 @@ function MyApp({ Component, pageProps, ...appProps }) {
   }, [isLogged]);
 
   const getLayout = () => {
-    if ([`/login`].includes(appProps.router.pathname) || [`/register`].includes(appProps.router.pathname)) {
+    if ([`/login`].includes(appProps.router.pathname) || [`/register`].includes(appProps.router.pathname) || [`/authrecovery`].includes(appProps.router.pathname)) {
       return (
         <Provider store={store}>
-          <div className="clearfix"></div>
+           <ToastContainer
+                position="bottom-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+              />
           <AuthLayout>
           <Component {...pageProps} />
           </AuthLayout>
@@ -41,6 +53,17 @@ function MyApp({ Component, pageProps, ...appProps }) {
     return (
       <Provider store={store}>       
         <Layout>
+        <ToastContainer
+                position="bottom-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+              />
           <Component {...pageProps} />
         </Layout>
       </Provider>

@@ -47,7 +47,7 @@ const SideMenu = () => {
               Admin
             </a>
             <div className="dropdown-menu user-pro-dropdown">
-              <Link  href="account">
+              <Link  href="profile">
               <a className="dropdown-item notify-item">
                 <i className="fe-user me-1"></i>
                 <span>My Account</span>
@@ -83,7 +83,7 @@ const SideMenu = () => {
             <li>
               <Link href="/">
                 <a>
-                <i className="ri-task-line"></i>
+                <i className="fas fa-book-reader"></i>
                   <span>Profile </span>
                 </a>
               </Link>
@@ -91,7 +91,7 @@ const SideMenu = () => {
             <li>
               <Link href="bio">
                 <a>
-                <i className="ri-task-line"></i>
+                <i className="fas fa-address-card"></i>
                   <span>Update Bio </span>
                 </a>
               </Link>
@@ -125,6 +125,14 @@ const SideMenu = () => {
                 <a>
                 <i className="ri-dashboard-line"></i>
                   <span> Next of Kin </span>
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="uploads">
+                <a>
+                <i className="fas fa-copy"></i>
+                  <span>Farm Uploads </span>
                 </a>
               </Link>
             </li>
