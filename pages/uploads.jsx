@@ -1,10 +1,16 @@
 import UploadLayout from "../components/UploadLayout";
-import React, {useCallback} from 'react'
+import React, {useCallback, useState} from 'react'
 import {useDropzone} from 'react-dropzone';
+import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
+import requests from "../agent";
 
 const  FileUploads =(props)=> {
-    const onDrop = useCallback(acceptedFiles => {
-       alert('uploads')
+    const router = useRouter();
+  const user = useSelector((state) => state.user);
+    const [files, setFiles] = useState([]);
+    const onDrop = useCallback(acceptedFiles => {  
+        setFiles(acceptedFiles);
       }, [])
   const {
     acceptedFiles,
@@ -18,7 +24,16 @@ const  FileUploads =(props)=> {
       }
    
   });
-
+  const handleUpLoad = () => { 
+    const formData = new FormData();
+    formData.append("files", files[0]);
+    for (var x = 1; x < files.length; x++) {
+      formData.append("files", files[x]);
+    }
+    requests.post("/uploads/"+user?.user?.email, formData).then((res) => {
+      router.push('/bio')
+    });
+  };
   const acceptedFileItems = acceptedFiles.map(file => (
     <li key={file.path}>
       {file.path} - {file.size} bytes
@@ -43,7 +58,7 @@ const  FileUploads =(props)=> {
     <section>
       <div {...getRootProps({ className: 'dropzone' })}>
         <input {...getInputProps()} />
-        <p>Drag 'n' drop some files here, or click to select files</p>
+        <p>Drag 'n' drop farm images here, or click to select files</p>
         <em>(10 files are the maximum number of files you can drop here)</em>
       </div>
       <aside>
@@ -54,7 +69,7 @@ const  FileUploads =(props)=> {
       </aside>
     </section>
     <div className="d-grid text-center">
-          <button className="btn btn-primary" type="submit">
+          <button onClick={()=>handleUpLoad()} className="btn btn-primary">
            upload
           </button>
         </div>
