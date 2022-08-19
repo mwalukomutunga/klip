@@ -24,12 +24,12 @@ const NavBar = () => {
               aria-haspopup="false"
               aria-expanded="false"
             >
-              <Image
+              <img
                 src="/assets/images/user.png"
                 alt="user-image"
                 className="rounded-circle"
-                width='42'
-                height ='30'
+                width='32'
+                height ='32'
               />
               <span className="pro-user-name ms-1">
                 {user?.user?.name} <i className="mdi mdi-chevron-down"></i>

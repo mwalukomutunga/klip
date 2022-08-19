@@ -26,8 +26,8 @@ const SideMenu = () => {
             alt="user-img"
             title="Mat Helme"
             className="rounded-circle avatar-md"
-            width='42'
-                height ='42'
+            width='32'
+                height ='32'
           />
           <div className="dropdown">
             <Link href="">

@@ -26,7 +26,7 @@ const AuthLayout = ({ children }) => {
                   <Link href="/">
                   <a  className="logo logo-dark text-center">
                     <span className="logo-lg">
-                      <Image src="/assets/images/logo.png" alt="" height="42" width='32' />
+                      <Image src="/assets/images/logo.png" alt="" height="52" width='142' />
                     </span>
                   </a>
                   </Link>
@@ -34,7 +34,7 @@ const AuthLayout = ({ children }) => {
                  <Link href="/">
                  <a  className="logo logo-light text-center">
                     <span className="logo-lg">
-                      <Image src="/assets/images/logo.png" alt="" height="42" width='32' />
+                      <Image src="/assets/images/logo.png" alt="" height="52" width='142' />
                     </span>
                   </a>
                  </Link>
