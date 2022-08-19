@@ -10,6 +10,13 @@ const Bio = () => {
   const router = useRouter();
 
   useEffect(() => {
+    if (user && user.isLogged && user.isLogged === true) {
+    } else {
+      router.push("/login");
+    }
+  }, [user, router]);
+
+  useEffect(() => {
     requests.get("Auth/" + user?.user?.email).then((res) => {
       setInputs(res);
     });
@@ -41,7 +48,7 @@ const Bio = () => {
               className="form-control"
               placeholder="Full name"
               name="fullName"
-              defaultValue={input.fullName}
+              defaultValue={input?.fullName}
               onChange={handleInputChange}
             />
           </div>
@@ -56,7 +63,7 @@ const Bio = () => {
               className="form-control"
               placeholder="ID Number"
               name="idNumber"
-              defaultValue={input.idNumber}
+              defaultValue={input?.idNumber}
               onChange={handleInputChange}
             />
           </div>
@@ -71,7 +78,7 @@ const Bio = () => {
               className="form-control"
               placeholder="Age"
               name="age"
-              defaultValue={input.age}
+              defaultValue={input?.age}
               onChange={handleInputChange}
             />
           </div>
@@ -86,7 +93,7 @@ const Bio = () => {
               className="form-control"
               placeholder="Household size"
               name="houseHoldSize"
-              defaultValue={input.houseHoldSize}
+              defaultValue={input?.houseHoldSize}
               onChange={handleInputChange}
             />
           </div>
@@ -97,7 +104,7 @@ const Bio = () => {
           </label>
           <div className="col-md-10">
             <select
-              defaultValue={input.age}
+              defaultValue={input?.age}
               onChange={handleInputChange}
               className="form-control"
             >
