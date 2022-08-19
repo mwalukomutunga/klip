@@ -1,6 +1,4 @@
 import Link from "next/link";
-import InPut from "../components/Input";
-import InputPwd from "../components/InputPwd";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import requests from "../agent";
