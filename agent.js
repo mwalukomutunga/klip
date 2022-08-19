@@ -15,7 +15,7 @@ const notify = (msg) =>
     progress: undefined,
   });
 axios.defaults.baseURL = isProd
-  ? "https://ims.crionline.africa/api/"
+  ? "https://klip.acreafrica.com/api/"
   : "http://localhost:7000/api/";
 
 axios.interceptors.request.use((config) => {
