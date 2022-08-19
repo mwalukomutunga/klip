@@ -1,5 +1,4 @@
 import ContentPage from "../components/ContentPage";
-import DataGrid from "devextreme-react/data-grid";
 import Table from "../components/Table";
 import { useEffect,useState } from "react";
 import requests from "../agent";
