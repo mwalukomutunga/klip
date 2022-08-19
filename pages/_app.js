@@ -1,5 +1,5 @@
 
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
 import store from "../context/store";
 import { Provider } from "react-redux";
 import Router,{ useRouter } from "next/router";
