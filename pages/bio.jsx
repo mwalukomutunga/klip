@@ -48,7 +48,7 @@ const Bio = () => {
               className="form-control"
               placeholder="Full name"
               name="fullName"
-              defaultValue={input?.fullName}
+              defaultValue={input?.fullName || ''}
               onChange={handleInputChange}
             />
           </div>
@@ -78,7 +78,7 @@ const Bio = () => {
               className="form-control"
               placeholder="Age"
               name="age"
-              defaultValue={input?.age}
+              defaultValue={input?.age || 0}
               onChange={handleInputChange}
             />
           </div>
@@ -93,7 +93,7 @@ const Bio = () => {
               className="form-control"
               placeholder="Household size"
               name="houseHoldSize"
-              defaultValue={input?.houseHoldSize}
+              defaultValue={input?.houseHoldSize || 0}
               onChange={handleInputChange}
             />
           </div>
@@ -104,8 +104,8 @@ const Bio = () => {
           </label>
           <div className="col-md-10">
             <select
-              defaultValue={input?.age}
-              onChange={handleInputChange}
+              defaultValue={input?.gender || 0}
+              onChange={(e)=> setInputs((inputs) => ({ ...inputs, gender: e.target.value }))}
               className="form-control"
             >
               <option>Male</option>
