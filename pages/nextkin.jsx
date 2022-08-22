@@ -166,7 +166,7 @@ const handleWardChange =(e)=>{
           <div className="col-md-10">
             <select
               defaultValue={input?.nextOfKin?.paymentMethod}
-              onChange={handleInputChange}
+              onChange={(e)=>setInputs((inputs) => ({ ...inputs, nextOfKin:{...inputs.nextOfKin,paymentMethod: e?.target?.value }}))}
               className="form-control"
             >
               <option>Mpesa</option>
